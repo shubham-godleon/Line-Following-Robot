@@ -1,0 +1,49 @@
+LFR(Rough coding)
+
+int frntsen = A0; {analog pins used here}
+int leftsen = A1; {analog pins used here}
+int rightsen = A2; {analog pins used here}
+
+int leftmotor1 = 3;
+int leftmotor2 = 5;
+int rightmotor1 = 9;
+int rightmotor2 = 10;
+
+void setup(){
+pinMode(3,OUTPUT);
+pinMode(5,OUTPUT);
+pinMode(9,OUTPUT);
+pinMode(10,OUTPUT);
+}
+
+void loop()
+{
+if(leftsen>=300&&frntsen<=100&&rightsen>=300 || leftsen<=100&&frntsen<=100&&rightsen<=100) // for moving front
+{
+digitalWrite(3,HIGH);
+digitalWrite(5,LOW);
+digitalWrite(9,HIGH);
+digitalWrite(10,LOW);
+}
+if(leftsen>=300&&frntsen>=300&&rightsen>=300 || leftsen<=100&&frntsen>=300&&rightsen<=100) //for stopping
+{
+digitalWrite(3,LOW);
+digitalWrite(5,LOW);
+digitalWrite(9,LOW);
+digitalWrite(10,LOW);
+}
+if(leftsen>=300&&frntsen>=300&&rightsen<=100 || leftsen>=300&&frntsen<=100&&rightsen<=100) //for right turn
+{
+digitalWrite(3,HIGH);
+digitalWrite(5,LOW);
+digitalWrite(9,LOW);
+digitalWrite(10,HIGH);
+}
+if(leftsen<=100&&frntsen>=300&&rightsen>=300 || leftsen<=100&&frntsen<=100&&rightsen>=300) //for left turn
+{
+digitalWrite(3,LOW);
+digitalWrite(5,HIGH);
+digitalWrite(9,HIGH);
+digitalWrite(10,LOW);
+}
+}

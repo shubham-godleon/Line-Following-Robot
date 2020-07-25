@@ -1,0 +1,12 @@
+CONDITIONS FOR THE IR  SENSOR IN LFR
+
+
+left	front	right	condition
+1	1	1	stop
+0	0	0	move front	
+1	1	0	right turn
+0	1	1	left turn
+1	0	1	move front
+0	0	1	left turn //only due to width of the path
+1	0	0	right turn //only due to the width of the path
+0	1	0	finish line stop
